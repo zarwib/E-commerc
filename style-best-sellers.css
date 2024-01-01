@@ -1,0 +1,91 @@
+/* Untuk semua class "description" di dalam class "best-sellers" */
+.best-sellers .description {
+    background-color: #fff;
+    color: var(--color-main);
+}
+
+/* Untuk class "description" yang langsung 1 level di bawah class "best-sellers" */
+.best-sellers > .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.5rem 2rem;
+}
+
+.best-sellers > .description h2 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.best-sellers > .description p {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.best-sellers ul {
+    display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    /* Mengaktifkan horizontal scroll */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 2rem;
+}
+
+.best-sellers ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera, other Webkit based */
+}
+
+.best-sellers ul li {
+    scroll-snap-align: start;
+    min-width: 300px;
+}
+
+.best-sellers ul li article img {
+    width: 100%;
+}
+
+/* Spesifik untuk class "description" yang berada di dalam element "article" */
+.best-sellers ul li article .description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+}
+
+/*
+Border kiri untuk class "description" yang berada di dalam element "li"
+yang bukan child pertama dari element "ul"
+*/
+.best-sellers ul li:not(:first-child) article .description {
+    border-left: 0.5px solid var(--color-gray);
+}
+
+/*
+Border kanan untuk class "description" yang berada di dalam element "li"
+yang bukan child terakhir dari element "ul"
+*/
+.best-sellers ul li:not(:last-child) article .description {
+    border-right: 0.5px solid var(--color-gray);
+}
+
+.best-sellers ul li article .description h3 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+/* Untuk ukuran layar yang lebarnya minimal 1024px */
+@media screen and (min-width: 1024px) {
+    .best-sellers > .description p {
+        font-size: 3rem;
+        max-width: 46rem;
+    }
+
+    .best-sellers ul li {
+        width: 25%;
+    }
+}

@@ -1,0 +1,57 @@
+.hero {
+  color: #fff;
+  position: relative;
+  /*
+    Kalkulasi satuan svh (smallest viewport height) dikurang tinggi header
+    */
+  height: calc(100svh - 4rem);
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.hero .description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: brightness(0.8);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  z-index: 1;
+}
+
+.hero .description h2 {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.hero .description p {
+  max-width: 33rem;
+}
+
+/* Untuk ukuran layar yang lebarnya minimal 1024px */
+@media screen and (min-width: 1024px) {
+  .hero .description {
+    width: 50%;
+    background-color: var(--color-main);
+    justify-content: center;
+  }
+
+  .hero .description h2 {
+    font-size: 6rem;
+  }
+
+  .hero .description p {
+    line-height: 1.8;
+    font-weight: 200;
+  }
+
+  .hero img {
+    width: 50%;
+    position: absolute;
+    right: 0;
+  }
+}

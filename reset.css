@@ -1,0 +1,33 @@
+/* Rules untuk mengatur box-sizing di semua element */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Menghilangkan default margin dan padding dari elemen-element tercantum */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Menghilangkan list styles (bullet points, numbering) */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Menghilangkan default styles untuk anchor links (hyperlinks) element <a></a> */
+a {
+    text-decoration: none;
+    color: inherit;
+}

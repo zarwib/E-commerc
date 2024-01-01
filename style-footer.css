@@ -1,0 +1,46 @@
+footer {
+    margin-top: 2rem;
+    background-color: var(--color-main);
+    padding: 2rem 0;
+    color: var(--color-gray)
+}
+
+footer > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+footer > ul li h2 {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer ul li.logo {
+    font-size: 3rem;
+}
+
+.link-with-logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Untuk ukuran layar yang lebarnya minimal 1024px */
+@media screen and (min-width: 1024px) {
+    footer > ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        /* Menjadikan alignment logo untuk berada di sisi bawah */
+        align-items: end;
+    }
+}

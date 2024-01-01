@@ -1,0 +1,78 @@
+header {
+  background-color: rgb(87, 162, 180);
+  color: var(--color-grey);
+  height: 4rem;
+  /*
+    Position sticky akan membuat element tidak ikut tergulung saat parent elementnya discroll.
+    Syaratnya, harus menentukan patokan yang sejalan dengan sumbu scroll pada parent element,
+    contoh di sini scroll terjadi pada element <body> secara vertical, sehingga dapat ditentukan
+    patokan top untuk element yang posisi defaultnya berada di bagian atas layar, atau bottom untuk
+    element yang posisi defaultnya berada di bagian bawah layar.
+    */
+  position: sticky;
+  top: 0;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  /* Menentukan leveling visibilitas element pada sumbu Z */
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav button {
+  background-color: transparent;
+  border: none;
+  color: rgb(47, 110, 139);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  /* 
+    Memposisikan element dengan pemberian patokan sisi top, right, bottom, dan atau left
+    dari posisi parent element yang memiliki property position juga;
+    */
+  position: absolute;
+  top: 4rem;
+  right: -100%;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--color-main);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 16px;
+  z-index: 1;
+  transition: right 0.5s ease-in;
+}
+
+/*
+Mengubah value dari property right dari -100% menjadi 0 supaya element dapat terlihat di layar,
+dengan menggunakan pseudo selector :focus (button sedang diklik), :focus-within (sedang ada 
+state focus di child element)
+*/
+header nav button:focus + .menu-items,
+header nav ul:focus-within {
+  right: 0;
+  transition: right 100ms ease-out;
+}
+
+header nav ul li {
+  padding: 0.5rem 16px;
+  font-size: 1.5rem;
+}
